@@ -77,4 +77,7 @@ TraderApp::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+
+  heroku labs:enable user-env-compile
 end
