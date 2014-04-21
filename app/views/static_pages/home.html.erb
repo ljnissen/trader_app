@@ -1,4 +1,16 @@
-	<div class="center hero-unit">
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <div class="center hero-unit">
 	<h1>The Traders</h1>
     <h2>
     	This is the home page of the Traders' App - a project designed to bring traders of the world together with technical analysis.
@@ -8,3 +20,4 @@
 </div>
 
 <%= link_to image_tag("chart.png", alt: "Chart"), 'http://guarded-woodland-3051.heroku.com' %>
+<% end %>
