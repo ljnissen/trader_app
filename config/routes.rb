@@ -1,4 +1,13 @@
 TraderApp::Application.routes.draw do
+
+  # get "companies_and_stocks/delete"
+   get "stocks/index"
+  # get "companies_and_stocks/show"
+  # get "companies_and_stocks/new"
+  # get "companies_and_stocks/edit"
+  # get "companies_and_stocks/delete_"
+  resources :credit_cards
+
   resources :users do
     member do
       get :following, :followers
@@ -14,6 +23,9 @@ TraderApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
+
+
+  match ':controller(/:action(/:id))', :via => :get, :via => :post
 
 
 

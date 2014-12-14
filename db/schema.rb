@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422072328) do
+ActiveRecord::Schema.define(version: 20140801153651) do
+
+  create_table "credit_cards", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "daily_stats", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "microposts", force: true do |t|
     t.string   "content"
@@ -32,6 +42,22 @@ ActiveRecord::Schema.define(version: 20140422072328) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "stocks", id: false, force: true do |t|
+    t.string   "name"
+    t.string   "ticker_symbol"
+    t.string   "sector"
+    t.datetime "city"
+    t.float    "void"
+    t.datetime "date"
+    t.float    "open"
+    t.float    "high"
+    t.float    "low"
+    t.float    "close"
+    t.datetime "volume"
+    t.datetime "closing_price"
+    t.integer  "id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"
